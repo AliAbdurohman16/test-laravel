@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class CategoryController extends Controller
 {
@@ -14,7 +15,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $data['category'] = Category::all();
+        $response = Http::get('http://127.0.0.1:8000/api/category/');
+        $data['category'] = $response->json()['data'];
         return view('category.list', $data);
     }
 

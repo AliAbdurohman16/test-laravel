@@ -21,11 +21,11 @@
                 @foreach ($category as $row)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $row->name }}</td>
-                    <td>{{ $row->is_publish == 1 ? 'True' : 'False' }}</td>
+                    <td>{{ $row['name'] }}</td>
+                    <td>{{ $row['is_publish'] == 1 ? 'True' : 'False' }}</td>
                     <td>
-                        <a href="{{ $row->id . '/edit' }}" class="btn-sm success">Edit</a>
-                        <a href="{{ $row->id }}" class="btn-sm danger">Delete</a>
+                        <a href="{{ $row['id'] . '/edit' }}" class="btn-sm success">Edit</a>
+                        <a href="{{ $row['id'] }}" class="btn-sm danger">Delete</a>
                     </td>
                 </tr>
                 @endforeach
