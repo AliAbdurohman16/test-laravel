@@ -1,5 +1,28 @@
 #search {
-    width: 100%;
+    width: 96%;
     font-size: 16px;
-    padding: 12px 20px 12px 40px;
+    padding: 12px 20px;
+    border: 1px solid #ddd;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+#table-list {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 18px;
+}
+
+#table-list th, #table-list td {
+    text-align: left;
+    padding: 12px;
+}
+
+#table-list tr {
+    border-bottom: 1px solid #ddd;
+}
+
+#table-list tr.table-header, #table-list tr:hover {
+    background-color: #f1f1f1;
 }
