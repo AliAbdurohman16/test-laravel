@@ -6,7 +6,7 @@
 
 <div class="card">
     <div class="container">
-        <form action="action_page.php">
+        <form action="{{ '/' }}">
             <div class="row">
                 <div class="col-25">
                 <label for="name">Name</label>
@@ -21,9 +21,8 @@
                 </div>
                 <div class="col-75">
                 <select id="ispublish" name="ispublish">
-                    <option value="australia">Australia</option>
-                    <option value="canada">Canada</option>
-                    <option value="usa">USA</option>
+                    <option value="1">True</option>
+                    <option value="0">False</option>
                 </select>
                 </div>
             </div>
