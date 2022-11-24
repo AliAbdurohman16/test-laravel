@@ -1,5 +1,5 @@
 function search() {
-        var input, filter, table, tr, name, is_publish, i, txtValue;
+    var input, filter, table, tr, name, is_publish, i, txtValue;
     input = document.getElementById("search");
     filter = input.value.toUpperCase();
     table = document.getElementById("table-list");
