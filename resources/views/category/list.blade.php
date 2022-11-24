@@ -40,7 +40,7 @@
             <a href="#">5</a>
             <a href="#">6</a>
             <a href="#">&raquo;</a>
-          </div> 
+        </div> 
     </div>
 </div>
 @endsection
