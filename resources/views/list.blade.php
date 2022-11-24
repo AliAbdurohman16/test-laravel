@@ -14,12 +14,12 @@
         <tr>
             <td>{{ $loop->iteration }}</td>
             <td>{{ $row->name }}</td>
-            <td>{{ $row->is_publish }}</td>
+            <td>{{ $row->is_publish == 1 ? 'True' : 'False' }}</td>
             <td>
                 <button>Edit</button>
                 <button>Delete</button>
             </td>
         </tr>
-        </tr>
+        @endforeach
     </tbody>
 </table>
