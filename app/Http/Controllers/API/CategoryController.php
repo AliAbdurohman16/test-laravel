@@ -29,6 +29,17 @@ class CategoryController extends Controller
      */
     public function create()
     {
+        // 
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
         $this->validate($request, [
             'name' => 'required',
             'is_publish' => 'required',
@@ -41,17 +52,6 @@ class CategoryController extends Controller
             "message" => "Category created successfully",
             "data" => $category
         ]);
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
     }
 
     /**
