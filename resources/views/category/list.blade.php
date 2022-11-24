@@ -1,3 +1,8 @@
+@extends('layout.index')
+
+@section('title', 'List Category')
+    
+@section('content')
 <input type="text" id="search" onkeyup="search()" placeholder="Search...">
 
 <table id="table-list">
@@ -23,3 +28,4 @@
         @endforeach
     </tbody>
 </table>
+@endsection
