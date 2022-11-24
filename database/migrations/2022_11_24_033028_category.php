@@ -13,7 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('category', function (Blueprint $table) {
+            $table->integer('id')->autoIncrement();
+            $table->string('name')->nullable();
+            $table->boolean('is_publish')->nullable();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('category');
     }
 };
