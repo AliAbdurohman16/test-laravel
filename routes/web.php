@@ -13,4 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [App\Http\Controllers\CategoryController::class, 'index'])->name('/');
+Route::resources(['/' => App\Http\Controllers\CategoryController::class,]);
