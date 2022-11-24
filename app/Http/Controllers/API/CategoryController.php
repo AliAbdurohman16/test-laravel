@@ -62,7 +62,11 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        return response()->json([
+            "success" => true,
+            "message" => "Category retrieved successfully",
+            "data" => Category::find($id)
+        ]);
     }
 
     /**
@@ -73,7 +77,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        // 
     }
 
     /**
