@@ -27,7 +27,10 @@
                 </div>
             </div>
             <div class="row">
-                <button type="submit" class="btn success float-right">Submit</button>
+                <div class="float-right mt-3">
+                    <a href="{{ '/' }}" class="btn success">Back</a>
+                    <button type="submit" class="btn info">Submit</button>
+                </div>
             </div>
         </form>
     </div> 
