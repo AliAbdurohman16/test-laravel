@@ -3,6 +3,7 @@
 @section('title', 'List Category')
     
 @section('content')
+<a href="{{ 'create' }}">Add</a>
 <input type="text" id="search" onkeyup="search()" placeholder="Search...">
 
 <table id="table-list">
@@ -21,8 +22,8 @@
             <td>{{ $row->name }}</td>
             <td>{{ $row->is_publish == 1 ? 'True' : 'False' }}</td>
             <td>
-                <button>Edit</button>
-                <button>Delete</button>
+                <a href="{{ $row->id . '/edit' }}">Edit</a>
+                <a href="{{ $row->id }}">Delete</a>
             </td>
         </tr>
         @endforeach
