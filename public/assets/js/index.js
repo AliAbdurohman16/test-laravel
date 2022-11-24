@@ -15,7 +15,7 @@ function search() {
             } else {
                 tr[i].style.display = "none";
             }
-        } if (is_publish) {
+        } else if (is_publish) {
             txtValue = is_publish.textContent || is_publish.innerText;
             if (txtValue.toUpperCase().indexOf(filter) > -1) {
                 tr[i].style.display = "";
