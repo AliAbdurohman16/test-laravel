@@ -6,7 +6,7 @@
 
 <div class="card">
     <div class="container">
-        <form action="{{ '/' }}">
+        <form action="{{ 'api/category/' }}" method="POST">
             <div class="row">
                 <div class="col-25">
                 <label for="name">Name</label>
@@ -20,7 +20,7 @@
                 <label for="ispublish">Is Publish</label>
                 </div>
                 <div class="col-75">
-                <select id="ispublish" name="ispublish">
+                <select id="ispublish" name="is_publish">
                     <option value="1">True</option>
                     <option value="0">False</option>
                 </select>
