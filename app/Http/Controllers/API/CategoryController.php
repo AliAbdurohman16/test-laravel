@@ -53,6 +53,7 @@ class CategoryController extends Controller
                 $message->to('user@gmail.com', 'User');
                 $message->subject('Add Category Successfully');
             });
+            $request->session()->flash('status', 'Add Category Successfully');
             return redirect('/');
         }
         // response()->json([
@@ -122,14 +123,13 @@ class CategoryController extends Controller
     {
         $delete = $category->delete();
 
-        if ($delete) {
-            \Mail::raw('Delete Category', function ($message) {
-                $message->from('aliabdurohman16@gmail.com', 'Ali Abdurohman');
-                $message->to('user@gmail.com', 'User');
-                $message->subject('Delete Category Successfully');
-            });
-            return redirect('/');
-        }
+        \Mail::raw('Delete Category', function ($message) {
+            $message->from('aliabdurohman16@gmail.com', 'Ali Abdurohman');
+            $message->to('user@gmail.com', 'User');
+            $message->subject('Delete Category Successfully');
+        });
+        
+        return redirect('/');
         return response()->json([
             "success" => true,
             "message" => "Category deleted successfully",
