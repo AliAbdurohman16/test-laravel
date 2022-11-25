@@ -47,7 +47,14 @@ class CategoryController extends Controller
 
         $category = Category::create($request->all());
 
-        return redirect('/');
+        if ($category) {
+            \Mail::raw('Add Category', function ($message) {
+                $message->from('aliabdurohman16@gmail.com', 'Ali Abdurohman');
+                $message->to('user@gmail.com', 'User');
+                $message->subject('Add Category Successfully');
+            });
+            return redirect('/');
+        }
         // response()->json([
         //     "success" => true,
         //     "message" => "Category created successfully",
@@ -113,9 +120,16 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        $category->delete();
+        $delete = $category->delete();
 
-        return redirect('/');
+        if ($delete) {
+            \Mail::raw('Delete Category', function ($message) {
+                $message->from('aliabdurohman16@gmail.com', 'Ali Abdurohman');
+                $message->to('user@gmail.com', 'User');
+                $message->subject('Delete Category Successfully');
+            });
+            return redirect('/');
+        }
         return response()->json([
             "success" => true,
             "message" => "Category deleted successfully",
