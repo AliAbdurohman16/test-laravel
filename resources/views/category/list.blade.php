@@ -7,7 +7,7 @@
 
 <div class="card">
     <div class="container">
-        <a href="{{ 'create' }}" class="btn info">Add</a>
+        <a href="{{ 'category/create' }}" class="btn info">Add</a>
         <table class="mt-3" id="table-list">
             <thead>
                 <tr class="table-header">
@@ -24,23 +24,18 @@
                     <td>{{ $row['name'] }}</td>
                     <td>{{ $row['is_publish'] == 1 ? 'True' : 'False' }}</td>
                     <td>
-                        <a href="{{ $row['id'] . '/edit' }}" class="btn-sm success">Edit</a>
-                        <a href="{{ $row['id'] }}" class="btn-sm danger">Delete</a>
+                        <a href="{{ 'category/'.$row['id'].'/edit' }}" class="btn-sm success">Edit</a>
+                        <form action="{{ URL::to('api/category/' . $row['id']) }}" method="post" style="display: inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn-sm danger">Delete</button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
-        <div class="pagination mt-3">
-            <a href="#">&laquo;</a>
-            <a href="#">1</a>
-            <a class="active" href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">5</a>
-            <a href="#">6</a>
-            <a href="#">&raquo;</a>
-        </div> 
+            {{ $category->links() }}
     </div>
 </div>
 @endsection

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,4 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resources(['/' => App\Http\Controllers\CategoryController::class,]);
+Route::get('/', [CategoryController::class, 'index']);
+Route::resources(['category' => CategoryController::class,]);

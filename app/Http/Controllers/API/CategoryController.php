@@ -18,7 +18,7 @@ class CategoryController extends Controller
         return response()->json([
             "success" => true,
             "message" => "Category List",
-            "data" => Category::all(),
+            "data" => Category::paginate(10),
         ]);
     }
 
@@ -47,11 +47,12 @@ class CategoryController extends Controller
 
         $category = Category::create($request->all());
 
-        return response()->json([
-            "success" => true,
-            "message" => "Category created successfully",
-            "data" => $category
-        ]);
+        return redirect('/');
+        // response()->json([
+        //     "success" => true,
+        //     "message" => "Category created successfully",
+        //     "data" => $category
+        // ]);
     }
 
     /**
@@ -96,6 +97,7 @@ class CategoryController extends Controller
 
         $category->update($request->all());
 
+        return redirect('/');
         return response()->json([
             "success" => true,
             "message" => "Category updated successfully",
@@ -113,6 +115,7 @@ class CategoryController extends Controller
     {
         $category->delete();
 
+        return redirect('/');
         return response()->json([
             "success" => true,
             "message" => "Category deleted successfully",

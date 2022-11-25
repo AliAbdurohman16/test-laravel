@@ -15,9 +15,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $response = Http::get('http://127.0.0.1:8000/api/category/');
-        $data['category'] = $response->json()['data'];
-        return view('category.list', $data);
+        $category = Category::paginate(10);
+        return view('category.list', compact('category'));
     }
 
     /**
@@ -49,7 +48,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        // 
     }
 
     /**
@@ -60,7 +59,9 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $response = Http::get('http://127.0.0.1:8000/api/category/'.$id);
+        $data['category'] = $response->json()['data'];
+        return view('category.edit', $data);
     }
 
     /**
